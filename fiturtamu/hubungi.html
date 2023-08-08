@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Kampung Kecicang Islam</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="floting.css">
+    <link rel="icon" href="favicon.png?fit=32%2C32&#038;ssl=1" sizes="32x32" />
+    <link rel="icon" href="favicon.png?fit=120%2C120&#038;ssl=1" sizes="192x192" />
+    <link rel="apple-touch-icon" href="favicon.png?fit=120%2C120&#038;ssl=1" />
+    <link rel="stylesheet" href="../style.css">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#333">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        /* Styling for the contact information */
+
+        .contact-info {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-icon {
+            font-size: 24px;
+            /* Increase the icon size for better visibility */
+            width: 30px;
+            /* Set a fixed width for consistent spacing */
+            text-align: center;
+            /* Center the icon horizontally */
+            margin-right: 15px;
+            /* Add more spacing between the icon and text */
+            color: #62CB0E;
+        }
+
+        .contact-item span {
+            font-size: 16px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-transparent text-white text-center py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <img src="../cicang1.png" alt="Logo Kampung Kecicang Islam" class="logo">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container mt-5 fade-in">
+        <div class="contact-info">
+            <h3 class="mb-3">Contact Information</h3>
+            <div class="contact-item">
+                <i class="fas fa-envelope contact-icon"></i>
+                <span><strong>Email:</strong> <a href="mailto:example@example.com">example@example.com</a></span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-whatsapp contact-icon"></i>
+                <span><strong>WhatsApp:</strong> <a href="https://wa.me/1234567890">+1234567890</a></span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone contact-icon"></i>
+                <span><strong>Phone:</strong> <a href="tel:(123)456-7890">(123) 456-7890</a></span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-facebook contact-icon"></i>
+                <span><strong>Facebook:</strong> <a href="https://www.facebook.com/yourprofile">Your Profile</a></span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-twitter contact-icon"></i>
+                <span><strong>Twitter:</strong> <a href="https://twitter.com/yourusername">Your Username</a></span>
+            </div>
+            <!-- Add more social media accounts with icons as needed -->
+        </div>
+    </div>
+    <footer class="bg-transparent text-center py-3" style="color: black;">
+        <p style="font-style: italic;" id="year">Hak Cipta &copy; 2023 -
+            <script>
+                document.write(new Date().getFullYear())
+            </script> Kampung Kecicang Islam</p>
+    </footer>
+    <!-- Di akhir body -->
+    <div class="floating-back-button d-lg-none">
+        <a href="../index.html">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+    </div>
+    <!-- Tambahkan tautan ke library SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch(error => {
+                    console.log('Service Worker registration failed:', error);
+                });
+        }
+
+        // Gunakan SweetAlert2 untuk menampilkan pesan selamat datang
+        document.addEventListener("DOMContentLoaded", function () {
+            Swal.fire({
+                title: 'Selamat Datang di Portal Kampung Kecicang Islam!!',
+                text: 'Silakan hubungi kami lebih lanjut melalui informasi kontak di bawah ini...',
+                icon: 'info',
+                confirmButtonText: 'OK',
+                showClass: {
+                    popup: 'animated fadeInDown faster' // Animasi masuk dari atas
+                },
+                hideClass: {
+                    popup: 'animated fadeOutUp faster' // Animasi keluar ke atas
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

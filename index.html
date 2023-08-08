@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Kampung Kecicang Islam</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="icon" href="favicon.png?fit=32%2C32&#038;ssl=1" sizes="32x32" />
+    <link rel="icon" href="favicon.png?fit=120%2C120&#038;ssl=1" sizes="192x192" />
+    <link rel="apple-touch-icon" href="favicon.png?fit=120%2C120&#038;ssl=1" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#333">
+    <style>
+        /* Konten Portal */
+        .portal-elements {
+            display: none;
+        }
+
+        /* Konten Login */
+        .login-elements {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: white;
+        }
+
+        .card-header {
+            background-color: #62CB0E;
+            color: white;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.5rem;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .btn-primary {
+            background-color: #62CB0E;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            width: 100%;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #4EA607;
+        }
+
+        /* Media Query untuk Perangkat Seluler */
+        @media (max-width: 767px) {
+            .login-elements {
+                padding: 20px;
+            }
+
+            .card {
+                box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .card-header {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-transparent text-white text-center py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <img src="cicang1.png" alt="Logo Kampung Kecicang Islam" class="logo">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container mt-5 fade-in login-elements">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Login
+                    </div>
+                    <div class="card-body">
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" value="tamu"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" name="password"
+                                    value="tamu123" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5 fade-in portal-elements">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 mb-4">
+                <a href="/infokampung/index.html" class="card-link">
+                    <div class="card card-informasi card-hover">
+                        <div class="card-body text-center">
+                            <i class="fas fa-info-circle fa-3x mb-3" style="color: #62CB0E;"></i>
+                            <h4 class="card-title" style="color: black;">Informasi Desa</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-6 mb-4">
+                <a href="fiturtamu/hubungi.html" class="card-link">
+                    <div class="card card-hubungi card-hover">
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope fa-3x mb-3" style="color: #62CB0E;"></i>
+                            <h4 class="card-title" style="color: black;">Hubungi Kami</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-6 mb-4">
+                <a href="fiturtamu/peta.html" class="card-link">
+                    <div class="card card-peta card-hover">
+                        <div class="card-body text-center">
+                            <i class="fas fa-map-marked-alt fa-3x mb-3" style="color: #62CB0E;"></i>
+                            <h4 class="card-title" style="color: black;">Tampilkan Peta</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-6 mb-4">
+                <a href="fitur/tamu.html" class="card-link">
+                    <div class="card card-bukutamu card-hover">
+                        <div class="card-body text-center">
+                            <i class="fas fa-book fa-3x mb-3" style="color: #62CB0E;"></i>
+                            <h4 class="card-title" style="color: black;">Isi Buku Tamu</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-transparent text-center py-3" style="color: black;">
+        <p style="font-style: italic;" id="year">Hak Cipta &copy; 2023 -
+            <script>
+                document.write(new Date().getFullYear())
+            </script> Kampung Kecicang Islam</p>
+    </footer>
+    <!-- Tambahkan tautan ke library SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

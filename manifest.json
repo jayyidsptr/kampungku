@@ -1,0 +1,16 @@
+{
+    "name": "Portal Kampung Kecicang Islam",
+    "short_name": "Portal Kampung",
+    "description": "Portal untuk mengakses informasi desa",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#333333",
+    "icons": [
+        {
+            "src": "favicon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}
