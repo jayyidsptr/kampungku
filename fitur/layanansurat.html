@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Kampung Kecicang Islam</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="floting.css">
+    <link rel="icon" href="../favicon.png?fit=32%2C32&#038;ssl=1" sizes="32x32" />
+    <link rel="icon" href="../favicon.png?fit=120%2C120&#038;ssl=1" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../favicon.png?fit=120%2C120&#038;ssl=1" />
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#333">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Tambahkan gaya berikut untuk logo responsif */
+        .logo {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .card-link {
+            text-decoration: none;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: cardFadeInAnimation 1s ease-in-out forwards;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .card-title {
+            margin-top: 1rem;
+            font-size: 1.25rem;
+        }
+
+        /* Warna yang berbeda untuk tiap kartu */
+        .card-informasi {
+            background-color: #ffffff;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .card-hubungi {
+            background-color: #ffffff;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .card-peta {
+            background-color: #ffffff;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .card-bukutamu {
+            background-color: #ffffff;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .card-icon {
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card:hover .card-icon {
+            transform: rotate(10deg);
+        }
+
+        .logo:hover {
+            filter: brightness(1.2);
+            transform: rotate(5deg);
+            transition: filter 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        #year:hover {
+            color: #62CB0E;
+            cursor: pointer;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .card-link:active .card {
+            transform: translateY(2px);
+            transition: transform 0.1s ease-in-out;
+        }
+
+        .card:hover .card-informasi {
+            background-color: #f8f9fa;
+        }
+
+        .card:hover .card-hubungi {
+            background-color: #e2e6ea;
+        }
+
+        .card:hover .card-peta {
+            background-color: #c6ccd2;
+        }
+
+        .card:hover .card-bukutamu {
+            background-color: #b9bec3;
+        }
+
+        /* Gaya tambahan untuk Accordion */
+        .accordion {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .accordion-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 1rem;
+        }
+
+        .accordion.active .accordion-title {
+            background-color: #e2e6ea;
+        }
+
+        .accordion.active .accordion-content {
+            display: block;
+        }
+
+        /* Tambahkan style berikut untuk penyesuaian pada tampilan mobile */
+        @media (max-width: 767px) {
+            .card {
+                margin-bottom: 1rem;
+            }
+
+            .card-body {
+                padding: 1rem;
+            }
+
+            .card-title {
+                font-size: 1rem;
+            }
+
+            .logo {
+                max-width: 80%;
+            }
+
+            .swal2-popup {
+                max-width: 90%;
+                font-size: 10px;
+            }
+
+            #year {
+                font-size: 10px;
+            }
+
+            .mb-0 {
+                font-size: 15px;
+            }
+        }
+
+        /* Animasi fade-in untuk konten pada halaman */
+        .fade-in {
+            opacity: 0;
+            animation: fadeInAnimation 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animasi fade-in untuk kartu */
+        @keyframes cardFadeInAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-transparent text-white text-center py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <img src="../cicang.png" alt="Logo Kampung Kecicang Islam" class="logo">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container mt-5 fade-in">
+        <div class="accordion" onclick="toggleAccordion(this)">
+            <div class="accordion-title">
+                <i class="fas fa-file-alt fa-2x mr-3" style="color: #62CB0E;"></i>
+                <h4 class="mb-0">Surat Pembuatan KTP</h4>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+                <ol>
+                    <li>Telah berusia 17 Tahun atau sudah kawin atau pernah kawin</li>
+                    <li>Surat pengantar RT/RW dan Kepala Desa/Lurah</li>
+                    <li>Foto Copy KK</li>
+                    <li>Kutipan Akta Nikah/Akta kawin bagi penduduk yang belum berusia 17 tahun</li>
+                    <li>Kutipan Akta Kelahiran</li>
+                    <li>Surat datang dari luar negeri yang diterbitkan oleh Instansi pelaksana bagi Warga Negara
+                        Indonesia yang datang dari luar Negeri karena pindah</li>
+                </ol>
+            </div>
+        </div>
+        <div class="accordion" onclick="toggleAccordion(this)">
+            <div class="accordion-title">
+                <i class="fas fa-file-alt fa-2x mr-3" style="color: #62CB0E;"></i>
+                <h4 class="mb-0">Surat Pembuatan KK</h4>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+                <ol>
+                    <li>Mengisi formulir KK (F1-01) distempel/mengetahui RT, RW, Kepala Desa/Kelurahan</li>
+                    <li>Surat Nikah/Akta Nikah/Kutipan Akta Perkawinan (Foto Copy)</li>
+                    <li>Akta Kelahiran/Surat Kelahiran bagi keluarga yang mempunyai anak (foto copy)</li>
+                    <li>Surat Pindah Datang dari tempat asal (Dalam Wilayah NKRI)</li>
+                    <li>Penerbitan KK di Kecamatan masing-masing</li>
+                </ol>
+            </div>
+        </div>
+        <div class="accordion" onclick="toggleAccordion(this)">
+            <div class="accordion-title">
+                <i class="fas fa-file-alt fa-2x mr-3" style="color: #62CB0E;"></i>
+                <h4 class="mb-0">Surat Pembuatan KK</h4>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+                <ol>
+                    <li>Mengisi formulir KK (F1-01) distempel/mengetahui RT, RW, Kepala Desa/Kelurahan</li>
+                    <li>Surat Nikah/Akta Nikah/Kutipan Akta Perkawinan (Foto Copy)</li>
+                    <li>Akta Kelahiran/Surat Kelahiran bagi keluarga yang mempunyai anak (foto copy)</li>
+                    <li>Surat Pindah Datang dari tempat asal (Dalam Wilayah NKRI)</li>
+                    <li>Penerbitan KK di Kecamatan masing-masing</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="accordion" onclick="toggleAccordion(this)">
+            <div class="accordion-title">
+                <i class="fas fa-file-alt fa-2x mr-3" style="color: #62CB0E;"></i>
+                <h4 class="mb-0">Perubahan Penambahan Anggota</h4>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+                <ol>
+                    <li>Mengisi formulir KK (F1-01) distempel/mengetahui RT, RW, Kepala Desa/Kelurahan</li>
+                    <li>KK (SIMDUK/SIAK) Asli</li>
+                    <li>KK yang akan ditumpangi (asli) bila pecah KK</li>
+                    <li>Akta Kelahiran/Surat Kelahiran bagi keluarga yang mempunyai anak (foto copy)</li>
+                    <li>Surat Pindah Datang dari tempat asal (Dalam Wilayah NKRI)</li>
+                    <li>Penerbitan KK di Kecamatan masing-masing</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="accordion" onclick="toggleAccordion(this)">
+            <div class="accordion-title">
+                <i class="fas fa-file-alt fa-2x mr-3" style="color: #62CB0E;"></i>
+                <h4 class="mb-0">Perubahan Pengurangan Anggota</h4>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+                <ol>
+                    <li>Mengisi formulir KK (F1-01) distempel/mengetahui RT, RW, Kepala Desa/Kelurahan</li>
+                    <li>KK (SIMDUK/SIAK) Asli</li>
+                    <li>Surat Keterangan Kematian</li>
+                    <li>Surat Keterangan Cerai</li>
+                    <li>Surat Pindah Datang dari tempat asal (Dalam Wilayah NKRI)</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="accordion" onclick="toggleAccordion(this)">
+            <div class="accordion-title">
+                <i class="fas fa-file-alt fa-2x mr-3" style="color: #62CB0E;"></i>
+                <h4 class="mb-0">Penerbitan KK Hilang/Rusak</h4>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+                <ol>
+                    <li>Surat Keterangan Kehilangan dari Desa/Kelurahan</li>
+                    <li>KK yang rusak/hilang (foto copy)</li>
+                    <li>Salah satu arsip KK yang dari RT/Desa/Kecamatan</li>
+                    <li>Menunjukkan Dokumen Kependudukan dari salah satu anggota yang sudah mempunyai NIK (foto copy)
+                    </li>
+                    <li>Penerbitan KK di kecamatan</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="accordion" onclick="toggleAccordion(this)">
+            <div class="accordion-title">
+                <i class="fas fa-file-alt fa-2x mr-3" style="color: #62CB0E;"></i>
+                <h4 class="mb-0">Perubahan Biodata KK yang Salah/Dirubah</h4>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+                <ol>
+                    <li>KK (SIMDUK/SIAK) Asli</li>
+                    <li>Akta Kelahiran/Surat Kelahiran dari Dokter/Bidan/Desa (foto copy)</li>
+                    <li>Ijazah yang dimiliki (foto copy)</li>
+                    <li>Surat Nikah/Kutipan Akta Nikah/Surat Cerai (foto copy)</li>
+                    <li>SK. PNS/KARIP/SK. TNI – POLRI</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-transparent text-center py-3" style="color: black;">
+        <p style="font-style: italic;" id="year">Hak Cipta &copy; 2023 -
+            <script>
+                document.write(new Date().getFullYear())
+            </script> Kampung Kecicang Islam</p>
+    </footer>
+    <!-- Di akhir body -->
+    <div class="floating-back-button d-lg-none">
+        <a href="portal.html">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch(error => {
+                    console.log('Service Worker registration failed:', error);
+                });
+        }
+
+        // Gunakan SweetAlert2 untuk menampilkan pesan selamat datang
+        document.addEventListener("DOMContentLoaded", function () {
+            Swal.fire({
+                title: 'Selamat Datang di layanan surat Kampung Kecicang Islam!!',
+                text: 'Silahkan pilih layanan surat yang ingin anda ketahui info lebih lanjutnya..',
+                icon: 'info',
+                confirmButtonText: 'OK',
+                showClass: {
+                    popup: 'animated fadeInDown faster' // Animasi masuk dari atas
+                },
+                hideClass: {
+                    popup: 'animated fadeOutUp faster' // Animasi keluar ke atas
+                }
+            });
+        });
+
+        // Script untuk mengelola aksi klik pada Accordion
+        function toggleAccordion(accordion) {
+            accordion.classList.toggle("active");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Kampung Kecicang Islam</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="floting.css">
+    <link rel="icon" href="favicon.png?fit=32%2C32&#038;ssl=1" sizes="32x32" />
+    <link rel="icon" href="favicon.png?fit=120%2C120&#038;ssl=1" sizes="192x192" />
+    <link rel="apple-touch-icon" href="favicon.png?fit=120%2C120&#038;ssl=1" />
+    <link rel="stylesheet" href="../style.css">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#333">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjceoXTAzCau9Vib83CPCD478GgCGHjSI"></script>
+    <style>
+        /* Style for the map title */
+        .map-title {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #333;
+            /* You can adjust the color to your preference */
+        }
+
+        /* Style for the map container */
+        .map-container {
+            height: 400px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-transparent text-white text-center py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <img src="../cicang1.png" alt="Logo Kampung Kecicang Islam" class="logo">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container mt-5 fade-in">
+        <h2 class="map-title">Peta Kampung</h2>
+        <div id="map" class="map-container"></div>
+    </div>
+    <footer class="bg-transparent text-center py-3" style="color: black;">
+        <p style="font-style: italic;" id="year">Hak Cipta &copy; 2023 -
+            <script>
+                document.write(new Date().getFullYear())
+            </script> Kampung Kecicang Islam</p>
+    </footer>
+    <!-- Di akhir body -->
+    <div class="floating-back-button d-lg-none">
+        <a href="portal.html">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+    </div>
+    <!-- Tambahkan tautan ke library SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch(error => {
+                    console.log('Service Worker registration failed:', error);
+                });
+        }
+
+        // Gunakan SweetAlert2 untuk menampilkan pesan selamat datang
+        document.addEventListener("DOMContentLoaded", function () {
+            Swal.fire({
+                title: 'Selamat Datang di Portal Kampung Kecicang Islam!!',
+                text: 'Silakan hubungi kami lebih lanjut melalui informasi kontak di bawah ini...',
+                icon: 'info',
+                confirmButtonText: 'OK',
+                showClass: {
+                    popup: 'animated fadeInDown faster' // Animasi masuk dari atas
+                },
+                hideClass: {
+                    popup: 'animated fadeOutUp faster' // Animasi keluar ke atas
+                }
+            });
+        });
+
+        // Initialize and show the map
+        function initMap() {
+            var myLatLng = {
+                lat: -8.447424,
+                lng: 115.587566
+            };
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: myLatLng,
+                zoom: 20 // You can adjust the zoom level
+            });
+
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Kampung Kecicang Islam'
+            });
+        }
+
+        // Call the initMap function after the Google Maps API is loaded
+        google.maps.event.addDomListener(window, 'load', initMap);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Kampung Kecicang Islam</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="icon" href="../favicon.png?fit=32%2C32&#038;ssl=1" sizes="32x32" />
+    <link rel="icon" href="../favicon.png?fit=120%2C120&#038;ssl=1" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../favicon.png?fit=120%2C120&#038;ssl=1" />
+    <link rel="stylesheet" href="../style.css">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#333">
+</head>
+
+<body>
+    <header class="bg-transparent text-white text-center py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <img src="../cicang.png" alt="Logo Kampung Kecicang Islam" class="logo">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container mt-5 fade-in">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 mb-4">
+                <a href="../infokecicangislam/index.html" class="card-link">
+                    <div class="card card-informasi card-hover">
+                        <div class="card-body text-center">
+                            <i class="fas fa-info-circle fa-3x mb-3" style="color: #62CB0E;"></i>
+                            <h4 class="card-title" style="color: black;">Informasi Desa</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-6 mb-4">
+                <a href="hubungi.html" class="card-link">
+                    <div class="card card-hubungi card-hover">
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope fa-3x mb-3" style="color: #62CB0E;"></i>
+                            <h4 class="card-title" style="color: black;">Hubungi Kami</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-6 mb-4">
+                <a href="peta.html" class="card-link">
+                    <div class="card card-peta card-hover">
+                        <div class="card-body text-center">
+                            <i class="fas fa-map-marked-alt fa-3x mb-3" style="color: #62CB0E;"></i>
+                            <h4 class="card-title" style="color: black;">Tampilkan Peta</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-6 mb-4">
+                <a href="pelayanan.html" class="card-link">
+                    <div class="card card-pelayanan card-hover">
+                        <div class="card-body text-center">
+                            <i class="fas fa-hands-helping fa-3x mb-3" style="color: #62CB0E;"></i>
+                            <h4 class="card-title" style="color: black;">Pelayanan Publik</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-transparent text-center py-3" style="color: black;">
+        <p style="font-style: italic;" id="year">Hak Cipta &copy; 2023 -
+            <script>
+                document.write(new Date().getFullYear())
+            </script> Kampung Kecicang Islam</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch(error => {
+                    console.log('Service Worker registration failed:', error);
+                });
+        }
+
+        // Gunakan SweetAlert2 untuk menampilkan pesan selamat datang
+        document.addEventListener("DOMContentLoaded", function () {
+            Swal.fire({
+                title: 'Selamat Datang di Portal Kampung Kecicang Islam!!',
+                text: 'Temukan informasi, hubungi kami, jelajahi peta, dan pelayanan Publik. Anda bisa login kembali kesini dengan username: warga & password: warga123',
+                icon: 'info',
+                confirmButtonText: 'OK',
+                showClass: {
+                    popup: 'animated fadeInDown faster' // Animasi masuk dari atas
+                },
+                hideClass: {
+                    popup: 'animated fadeOutUp faster' // Animasi keluar ke atas
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
