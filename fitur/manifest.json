@@ -9,7 +9,7 @@
     "orientation": "portrait",
     "icons": [
         {
-            "src": "https://i0.wp.com/id.timedoor.net/wp-content/uploads/2022/10/favicon-green-01.png?fit=120%2C120&ssl=1",
+            "src": "timedoor.png",
             "sizes": "192x192",
             "type": "image/png"
         }
