@@ -1,0 +1,17 @@
+{
+    "name": "Aplikasi Gaji Timedoor",
+    "short_name": "E-Salary",
+    "description": "Aplikasi Penggajian Khusus Putra",
+    "start_url": "./gaji.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#333333",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "https://i0.wp.com/id.timedoor.net/wp-content/uploads/2022/10/favicon-green-01.png?fit=120%2C120&ssl=1",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}
