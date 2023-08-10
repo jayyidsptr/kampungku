@@ -1,15 +1,15 @@
 {
-    "name": "Portal Kampung Kecicang Islam",
-    "short_name": "Portal Kampung",
-    "description": "Portal untuk mengakses informasi desa",
-    "start_url": "./index.html",
+    "name": "Aplikasi Gaji Timedoor",
+    "short_name": "E-Salary",
+    "description": "Aplikasi Penggajian Khusus Putra",
+    "start_url": "./gaji.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#333333",
     "orientation": "portrait",
     "icons": [
         {
-            "src": "./favicon.png",
+            "src": "./timedoor.png",
             "sizes": "192x192",
             "type": "image/png"
         }
